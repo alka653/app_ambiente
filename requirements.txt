@@ -3,6 +3,7 @@ django-allauth==0.25.2
 django-cors-headers==1.1.0
 django-rest-auth==0.7.0
 djangorestframework==3.3.3
+gunicorn==19.3.0
 oauthlib==1.0.3
 Pillow==2.8.0
 python-openid==2.2.5
