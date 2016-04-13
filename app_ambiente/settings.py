@@ -46,7 +46,6 @@ INSTALLED_APPS = (
 	'rest_auth',
 	'django.contrib.sites',
 	'allauth',
-	'whitenoise',
 	'allauth.account',
 	'rest_auth.registration',
 )
