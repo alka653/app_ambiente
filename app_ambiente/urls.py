@@ -28,9 +28,5 @@ urlpatterns = [
 	url(r'^users/', include('app_ambiente.apps.users.urls')),
 	#url(r'^accounts/', include('allauth.urls')),
 	url(r'^solicitudes/', include('app_ambiente.apps.solicitudes.urls')),
+	url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 ]
-
-if not settings.DEBUG:
-	urlpatterns += patterns('',
-		(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
-	)
