@@ -15,6 +15,10 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "app_ambiente.settings")
 
 application = get_wsgi_application()
 
-from dj_static import Cling
+ON_HEROKU = True
 
-application = Cling(get_wsgi_application())
+if ON_HEROKU == True:
+	from dj_static import Cling
+	application = Cling(get_wsgi_application())
+else:
+	application = get_wsgi_application()
