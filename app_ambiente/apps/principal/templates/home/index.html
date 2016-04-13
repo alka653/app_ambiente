@@ -1,5 +1,9 @@
 {% extends 'layout/base.html' %}
 
 {% block content %}
-	<a href="{% url 'new_solicitud' %}" class="btn btn-success btn-lg" id="load-page">Crear Solicitud</a>
+	{% if user.profileuser.type_profile.nombre == 'normal' %}
+		<a href="{% url 'new_solicitud' %}" class="btn btn-success btn-lg" id="load-page">Hacer Solicitud</a>
+	{% else %}
+		<a href="{% url 'view_solicitud' %}" class="btn btn-success btn-lg" id="load-page">Ver Solicitudes</a>
+	{% endif %}
 {% endblock content %}

@@ -24,7 +24,7 @@ urlpatterns = [
 	url(r'^rest-auth/registrate/', include('rest_auth.registration.urls')),
 	url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 	url(r'^', include('app_ambiente.apps.principal.urls')),
-	#url(r'^accounts/', include('app_ambiente.apps.users.urls')),
-	url(r'^accounts/', include('allauth.urls')),
+	url(r'^users/', include('app_ambiente.apps.users.urls')),
+	#url(r'^accounts/', include('allauth.urls')),
 	url(r'^solicitudes/', include('app_ambiente.apps.solicitudes.urls')),
 ]

@@ -4,6 +4,9 @@ from django.db import models
 class TypeProfile(models.Model):
 	nombre = models.CharField(max_length = 30)
 
+	def __str__(self):
+		return self.nombre
+
 class ProfileUser(models.Model):
 	user = models.OneToOneField(User, primary_key = True)
 	foto = models.ImageField(upload_to = 'img/users/', default = 'img/users/none.png', blank = True)

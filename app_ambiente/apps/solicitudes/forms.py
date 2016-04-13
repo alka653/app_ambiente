@@ -8,8 +8,11 @@ class SolicitudForm(forms.ModelForm):
 		model = SolicitudUser
 		fields = '__all__'
 		exclude = ('user',)
+		labels = {
+			'peso_aprox': 'Peso Aproximado (Kg)',
+		}
 
 	def __init__(self, *args, **kwargs):
 		super(SolicitudForm, self).__init__(*args, **kwargs)
-		self.fields['peso_aprox'].widget = widgets.TextInput(attrs = {'class': 'form-control'})
-		self.fields['material'].widget = widgets.Select(choices = Material.objects.all().values_list('pk', 'nombre'), attrs = {'class': 'form-control'})
+		self.fields['peso_aprox'].widget = widgets.TextInput(attrs = {'class': 'form-control', 'required': True})
+		self.fields['bodega_material'] = forms.ModelChoiceField(label = 'Material', queryset = TipoMaterial.objects.all(), empty_label = 'Seleccione un Material', widget = forms.Select(attrs = {'class': 'form-control', 'required': True}))
