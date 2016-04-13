@@ -13,8 +13,6 @@ from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "app_ambiente.settings")
 
-application = get_wsgi_application()
-
 ON_HEROKU = True
 
 if ON_HEROKU == True:
