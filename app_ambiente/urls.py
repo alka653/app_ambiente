@@ -1,5 +1,6 @@
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.conf import settings
 
 # Django Rest Api
 from django.contrib.auth.models import User
@@ -28,3 +29,8 @@ urlpatterns = [
 	#url(r'^accounts/', include('allauth.urls')),
 	url(r'^solicitudes/', include('app_ambiente.apps.solicitudes.urls')),
 ]
+
+if not settings.DEBUG:
+	urlpatterns += patterns('',
+		(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+	)
