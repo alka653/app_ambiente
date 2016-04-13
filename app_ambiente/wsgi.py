@@ -13,10 +13,11 @@ from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "app_ambiente.settings")
 
-ON_HEROKU = True
+application = get_wsgi_application()
 
-if ON_HEROKU == True:
+try:
 	from dj_static import Cling
+
 	application = Cling(get_wsgi_application())
-else:
-	application = get_wsgi_application()
+except:
+	pass
