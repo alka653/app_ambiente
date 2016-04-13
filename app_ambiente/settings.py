@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'z9u+kcgfa&5vp)ke74i&s!km2lsskfbb=298i0l&8e#$7q(z8w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*',]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -131,14 +131,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR,'app_ambiente/static')
-
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'app_ambiente/static/img')
+MEDIA_ROOT = os.path.join(BASE_DIR,'app_ambiente/static')
 
-MEDIA_URL ='/img/'
+MEDIA_URL ='/image/'
 
 STATICFILES_DIRS = (
-	os.path.join(BASE_DIR, 'app_ambiente/static/files'),
+	os.path.join(BASE_DIR, 'app_ambiente/static'),
 )
