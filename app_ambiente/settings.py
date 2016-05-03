@@ -37,26 +37,16 @@ INSTALLED_APPS = (
 	'django.contrib.sessions',
 	'django.contrib.messages',
 	'django.contrib.staticfiles',
+	'django.contrib.sites',
 	'app_ambiente.apps.principal',
 	'app_ambiente.apps.solicitudes',
 	'app_ambiente.apps.users',
-	'corsheaders',
-	'rest_framework',
-	'rest_framework.authtoken',
-	'rest_auth',
-	'django.contrib.sites',
-	'allauth',
-	'allauth.account',
-	'rest_auth.registration',
 )
-
-SITE_ID = 1
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MIDDLEWARE_CLASSES = (
 	'django.contrib.sessions.middleware.SessionMiddleware',
-	'corsheaders.middleware.CorsMiddleware',
 	'django.middleware.common.CommonMiddleware',
 	'django.middleware.csrf.CsrfViewMiddleware',
 	'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -65,19 +55,6 @@ MIDDLEWARE_CLASSES = (
 	'django.middleware.clickjacking.XFrameOptionsMiddleware',
 	'django.middleware.security.SecurityMiddleware',
 )
-
-CORS_ORIGIN_ALLOW_ALL = True
-
-CORS_ALLOW_HEADERS = ('*')
-
-CORS_ALLOW_CREDENTIALS = True
-
-REST_FRAMEWORK = {
-	'DEFAULT_AUTHENTICATION_CLASSES': (
-		'rest_framework.authentication.BasicAuthentication',
-		'rest_framework.authentication.SessionAuthentication',
-	)
-}
 
 ROOT_URLCONF = 'app_ambiente.urls'
 
@@ -99,6 +76,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'app_ambiente.wsgi.application'
 
+SITE_ID = 1
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
